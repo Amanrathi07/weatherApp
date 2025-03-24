@@ -19,25 +19,23 @@ async function apiCall(input,latitude,longitude) {
 let data = await response.json();
    
     changeDisplay(data);
-    displayDiv(input);
+    displayDiv();
 
   }else{
     let response = await fetch(
       `http://api.weatherapi.com/v1/current.json?key=49f88cffb66d403cad2211459252203&q=${input}&aqi=no`
     );
     let data = await response.json();
-   
+    console.log(data);
+    
     changeDisplay(data);
-    displayDiv(input);
+    displayDiv();
 
   }
-    let data = await response.json();
-   
-    changeDisplay(data);
-    displayDiv(input);
+    
     
   }catch(err){
-    console.log("Error");
+    console.log(err);
   }
 }
 
@@ -47,7 +45,8 @@ function changeDisplay({ current, location }) {
   let windSpeed = document.getElementById("windSpeed");
   let humidity = document.getElementById("humidity");
   let pressure = document.getElementById("pressure");
-
+  let icon = document.getElementById("icon");
+  let disc = document.getElementById("disc");
  
   
   temp.innerHTML = `${current.temp_c}<sup>o</sup>C`;
@@ -55,8 +54,9 @@ function changeDisplay({ current, location }) {
   windSpeed.innerHTML = `${current.wind_kph} km/h`;
   humidity.innerHTML = `${current.humidity}%`;
   pressure.innerHTML = `${current.pressure_mb} mb`;
+  icon.src = current.condition.icon;
+  disc.innerHTML = current.condition.text;
 }
-
 
 function displayDiv(){
   let weatherInfo = document.getElementById("weatherInfo");

@@ -85,11 +85,11 @@ body {
   display: flex;
   flex-direction: column;
     align-items: center;
-    display: none;
+    /* display: none; */
 }
 
 #temp {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     /* color: aliceblue; */
 }
@@ -106,7 +106,7 @@ body {
     display: flex;
     align-items: center;
     gap: 90px;
-    display: none;
+    /* display: none; */
 }
 
 .info{
@@ -118,7 +118,36 @@ body {
     /* color: white; */
     font-weight: bold;
     height: 50px;
+
 }
 .par{
     margin-top: -10px;
+}
+
+
+.mainInfo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 75px;
+    
+    margin-top: -15px;
+    /* color: aliceblue; */
+    font-size: 20px;
+    font-weight: bold;
+    gap: 10vw;
+}
+.iconDiv{
+ 
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+}
+
+#icon{
+  margin-top: 45px;
+}
+
+#disc{
+  margin-top: -5px;
 }
